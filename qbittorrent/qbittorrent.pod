@@ -1,0 +1,8 @@
+[Pod]
+PodName=qbittorrent
+PublishPort=41240:41240/tcp
+PublishPort=41240:41240/udp
+PublishPort=9000:9000/tcp
+
+[Install]
+WantedBy=default.target
