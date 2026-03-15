@@ -1,0 +1,13 @@
+[Container]
+ContainerName=joplin-db
+Pod=joplin.pod
+Image=docker.io/postgres:16
+
+Environment=POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+Environment=POSTGRES_USER=${POSTGRES_USER}
+Environment=POSTGRES_DB=${POSTGRES_DATABASE}
+
+Volume=%D/podman/joplin/data/postgres:/var/lib/postgresql/data:Z
+
+[Service]
+EnvironmentFile=%E/containers/systemd/joplin/.env
