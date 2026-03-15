@@ -9,11 +9,11 @@ AutoUpdate=registry
 
 Environment=PUID=0 PGID=0
 Environment=QBT_LEGAL_NOTICE=confirm
-Environment=QBT_TORRENTING_PORT=41240 QBT_WEBUI_PORT=9000
+Environment=QBT_TORRENTING_PORT=41240
+Environment=QBT_WEBUI_PORT=9000
 
 Volume=%D/podman/qbittorrent/config:/config:Z
-Volume=/mnt/store/Torrent/mam:/mam:z
-Volume=/mnt/store/Torrent/general:/general:z
+Volume=/mnt/ext/Qbit:/downloads:z
 
 Tmpfs=/tmp
 User=0
