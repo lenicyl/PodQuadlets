@@ -1,0 +1,9 @@
+[Pod]
+PodName=linkace
+PublishPort=8080:80/tcp
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always

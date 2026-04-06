@@ -1,0 +1,14 @@
+[Container]
+ContainerName=linkace-db
+Pod=linkace.pod
+Image=docker.io/library/mariadb:12.0
+
+Environment=MYSQL_ROOT_PASSWORD=${DB_PASSWORD}
+Environment=MYSQL_USER=${DB_USERNAME}
+Environment=MYSQL_PASSWORD=${DB_PASSWORD}
+Environment=MYSQL_DATABASE=${DB_DATABASE}
+
+Volume=linkace-db.volume:/var/lib/mysql:z
+
+[Service]
+EnvironmentFile=%E/containers/systemd/linkace/.env

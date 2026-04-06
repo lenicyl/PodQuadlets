@@ -1,0 +1,6 @@
+[Container]
+ContainerName=linkace-cache
+Pod=linkace.pod
+Image=docker.io/library/redis:8.2
+
+Exec=redis-server --requirepass '${REDIS_PASSWORD}'

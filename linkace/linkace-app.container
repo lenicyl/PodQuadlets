@@ -1,0 +1,9 @@
+[Unit]
+Requires=linkace-db.container
+After=linkace-db.container
+
+[Container]
+ContainerName=linkace-app
+Pod=linkace.pod
+Image=docker.io/linkace/linkace:latest
+Volume=%E/containers/systemd/linkace/.env:/app/.env:Z
