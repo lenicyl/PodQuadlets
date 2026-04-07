@@ -4,3 +4,6 @@ Pod=linkace.pod
 Image=docker.io/library/redis:8.2
 
 Exec=redis-server --requirepass '${REDIS_PASSWORD}'
+
+[Service]
+EnvironmentFile=%E/containers/systemd/linkace/.env
