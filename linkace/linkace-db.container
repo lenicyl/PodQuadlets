@@ -11,4 +11,5 @@ Environment=MYSQL_DATABASE=${DB_DATABASE}
 Volume=linkace-db.volume:/var/lib/mysql:z
 
 [Service]
-EnvironmentFile=%E/containers/systemd/linkace/.env
+EnvironmentFile=%E/containers/systemd/linkace.env.defaults
+EnvironmentFile=-%E/containers/systemd/linkace.env
