@@ -15,4 +15,5 @@ Environment=TRANSCRIBE_ENABLED=false
 StopTimeout=1800
 
 [Service]
-EnvironmentFile=%E/containers/systemd/joplin/.env
+EnvironmentFile=%E/containers/systemd/joplin.env.defaults
+EnvironmentFile=-%E/containers/systemd/joplin.env

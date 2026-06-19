@@ -10,4 +10,5 @@ Environment=POSTGRES_DB=${POSTGRES_DATABASE}
 Volume=joplin-db.volume:/var/lib/postgresql/data:Z
 
 [Service]
-EnvironmentFile=%E/containers/systemd/joplin/.env
+EnvironmentFile=%E/containers/systemd/joplin.env.defaults
+EnvironmentFile=-%E/containers/systemd/joplin.env
