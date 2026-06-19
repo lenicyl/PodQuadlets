@@ -3,6 +3,7 @@ ContainerName=linkace-app
 Pod=linkace.pod
 Image=docker.io/linkace/linkace:latest
 
+Volume=linkace-backups.volume:/app/storage/app/backups:z
 
 EnvironmentFile=%E/containers/systemd/linkace.env.defaults
 EnvironmentFile=%E/containers/systemd/linkace.env
