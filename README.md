@@ -21,3 +21,12 @@ It is possible to override the environment variable in the `.env.defaults` by si
 
 For more complex modification of the configuration, drop-in directories should be used. Please refer to the documentation of [Podman Systemd Unit](https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html) and [Systemd Unit](https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html) to learn more about Drop-ins.
 
+### Qbittorrent
+
+Custom bind mounts can be defined in drop-in files.
+
+`$XDG_CONFIG_HOME/containers/systemd/qbittorrent.container.d/volume.conf`
+```
+[Container]
+Volume=/home/JackSparrow/downloads:/downloads:Z
+```
