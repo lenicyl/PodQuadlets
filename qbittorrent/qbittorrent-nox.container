@@ -1,19 +1,16 @@
-[Unit]
-Description=Qbittorrent nox container
-
 [Container]
 ContainerName=qbittorrent-nox
-Pod=qbittorrent.pod
 Image=docker.io/qbittorrentofficial/qbittorrent-nox:latest
 AutoUpdate=registry
+
+PublishPort=9000:9000
+PublishPort=41240:41240/tcp
+PublishPort=41240:41240/udp
 
 Environment=PUID=0 PGID=0
 Environment=QBT_LEGAL_NOTICE=confirm
 Environment=QBT_TORRENTING_PORT=41240
 Environment=QBT_WEBUI_PORT=9000
-
-Volume=%D/podman/qbittorrent/config:/config:Z
-Volume=/mnt/ext/Qbit:/downloads:z
 
 Tmpfs=/tmp
 User=0
@@ -21,4 +18,5 @@ Group=0
 StopTimeout=1800
 
 [Service]
+WantedBy=default.target
 Restart=always
