@@ -21,9 +21,37 @@ It is possible to override the environment variable in the `.env.defaults` by si
 
 For more complex modification of the configuration, drop-in directories should be used. Please refer to the documentation of [Podman Systemd Unit](https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html) and [Systemd Unit](https://www.freedesktop.org/software/systemd/man/latest/systemd.unit.html) to learn more about Drop-ins.
 
+### Linkace
+
+The `linkace-app` container will not start without the `linkace.env` file. This is because the environment variable `APP_KEY` needs to be set manually.
+
+The following command should set the `APP_KEY` environment variable in the `linkace.env` file.
+```bash
+echo "APP_KEY=$(podman run --rm linkace/linkace php artisan key:generate --show)" > "$XDG_CONFIG_HOME/containers/systemd/linkace.env"
+```
+
+You may edit the `linkace.env` to set further overrides, for example:
+
+`$XDG_CONFIG_HOME/containers/systemd/linkace.env`
+```
+APP_KEY=base64:WrA2mmwJ+B7IQ4Jf0o0HDk5L0Wq9cWaBWJTAzw0c6Ag=
+
+APP_URL=https://link.example.com
+DB_PASSWORD=tr0ub4dor&3
+```
+
+### Joplin
+
+You can change the website URL by overriding the `APP_BASE_URL` environment variable, for example:
+
+`$XDG_CONFIG_HOME/containers/systemd/joplin.env`
+```
+APP_BASE_URL=https://joplin.example.com
+```
+
 ### Qbittorrent
 
-Custom bind mounts can be defined in drop-in files.
+Custom bind mounts can be defined in drop-in files, for example:
 
 `$XDG_CONFIG_HOME/containers/systemd/qbittorrent.container.d/volume.conf`
 ```
