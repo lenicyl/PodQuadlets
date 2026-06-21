@@ -23,6 +23,15 @@ For more complex modification of the configuration, drop-in directories should b
 
 ### Linkace
 
+> [!WARNING]
+> I noticed [Mixed Content](https://developer.mozilla.org/en-US/docs/Web/Security/Defenses/Mixed_content) errors in the browser console that breaks the update checking functionality.
+> 
+> After endless amounts of tinkering I discovered that in my caddy configuration changing `reverse_proxy localhost:8080` to `reverse_proxy 0.0.0.0:8080` fixes this issue.
+> 
+> I have not tested extensively but I think this issue does not occur if `podman-compose` is used, so perhaps it could be some kind of setup flaw.
+>
+>  Either way, I genuinely have no idea why this is happening.
+
 The `linkace-app` container will not start without the `linkace.env` file. This is because the environment variable `APP_KEY` needs to be set manually.
 
 The following command should set the `APP_KEY` environment variable in the `linkace.env` file.
