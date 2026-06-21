@@ -1,0 +1,9 @@
+[Pod]
+PodName=miniflux
+PublishPort=6080:8080
+
+[Install]
+WantedBy=default.target
+
+[Service]
+Restart=always

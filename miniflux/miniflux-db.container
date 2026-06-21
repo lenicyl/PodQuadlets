@@ -1,0 +1,20 @@
+[Container]
+ContainerName=miniflux-db
+Pod=miniflux.pod
+Image=docker.io/postgres:18
+
+Environment=POSTGRES_USER=${DB_USER}
+Environment=POSTGRES_PASSWORD=${DB_PASS}
+Environment=POSTGRES_DB=${DB_NAME}
+
+Volume=miniflux-db.volume:/var/lib/postgresql
+
+HealthCmd=pg_isready -U miniflux
+HealthInterval=10s
+HealthStartupTimeout=30s
+
+[Service]
+Notify=healthy
+
+EnvironmentFile=%E/containers/systemd/miniflux.env.defaults
+EnvironmentFile=-%E/containers/systemd/miniflux.env
