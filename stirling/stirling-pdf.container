@@ -4,7 +4,7 @@ Image=docker.io/stirlingtools/stirling-pdf:latest-fat
 PublishPort=8080:8080
 
 Environment=SECURITY_ENABLELOGIN=false
-Volume=sterling-config.volume:/configs
+Volume=stirling-config.volume:/configs
 
 [Service]
 Restart=on-failure
