@@ -3,7 +3,6 @@ ContainerName=stirling-pdf
 Image=docker.io/stirlingtools/stirling-pdf:latest-fat
 PublishPort=7080:8080
 
-Environment=SECURITY_ENABLELOGIN=false
 Volume=stirling-config.volume:/configs
 
 [Service]

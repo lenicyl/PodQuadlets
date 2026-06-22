@@ -67,3 +67,16 @@ Custom bind mounts can be defined in drop-in files, for example:
 [Container]
 Volume=/home/JackSparrow/downloads:/downloads:Z
 ```
+
+### Stirling
+
+Stirling pdf can be configured using environment variables, but i have found its behaviour to be inconsistent. There is actually so much more thats inconsistent, but i cannot find an alternative other than BentoPDF, which is slow for complex operations.
+
+I suggest configuring this application using its `settings.yml` file. You could setup a bind mount or modify the file through any other means. I personally make use the `podman cp` command to copy the file after which i use the same command to copy the modified file back to the volume.
+
+```bash
+podman cp stirling-pdf:/configs/settings.yml .
+
+# ... After modifying the yml file ...
+podman cp ./settings.yml stirling-pdf:/configs/settings.yml
+```
