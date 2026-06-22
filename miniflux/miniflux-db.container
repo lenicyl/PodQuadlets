@@ -9,7 +9,7 @@ Environment=POSTGRES_DB=${DB_NAME}
 
 Volume=miniflux-db.volume:/var/lib/postgresql
 
-HealthCmd=pg_isready -U miniflux
+HealthCmd=pg_isready -U ${DB_USER}
 HealthInterval=10s
 HealthStartupTimeout=30s
 
