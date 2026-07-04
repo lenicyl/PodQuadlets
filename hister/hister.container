@@ -1,0 +1,10 @@
+[Container]
+ContainerName=hister
+Image=ghcr.io/asciimoo/hister:latest-root
+
+PublishPort=4433:4433
+
+Volume=hister-data.volume:/hister/data
+
+[Install]
+WantedBy=default.target
