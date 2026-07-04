@@ -1,0 +1,14 @@
+[Container]
+ContainerName=linkace-search
+Pod=linkace.pod
+Image=docker.io/getmeili/meilisearch:v1.16
+
+Environment=MEILI_ENV=production
+Environment=MEILI_NO_ANALYTICS=true
+Environment=MEILI_MASTER_KEY=${MEILISEARCH_KEY}
+
+Volume=linkace-search.volume:/meili_data
+
+[Service]
+EnvironmentFile=%E/containers/systemd/linkace.env.defaults
+EnvironmentFile=-%E/containers/systemd/linkace.env
