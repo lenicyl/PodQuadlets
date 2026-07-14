@@ -18,5 +18,7 @@ Group=0
 StopTimeout=1800
 
 [Service]
-WantedBy=default.target
 Restart=always
+
+[Install]
+WantedBy=default.target
