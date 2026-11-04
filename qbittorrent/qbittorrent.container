@@ -12,6 +12,8 @@ Environment=QBT_LEGAL_NOTICE=confirm
 Environment=QBT_TORRENTING_PORT=41240
 Environment=QBT_WEBUI_PORT=9000
 
+Volume=qbittorrent-config.volume:/config
+
 Tmpfs=/tmp
 User=0
 Group=0
