@@ -1,14 +1,10 @@
-[Unit]
-Description=Radicale Podman Container
-
 [Container]
 ContainerName=radicale
 Image=ghcr.io/kozea/radicale:stable
-PublishPort=5232:5232/tcp
-AutoUpdate=registry
+PublishPort=5232:5232
 
-Volume=%D/podman/radicale/config:/etc/radicale:Z,ro
-Volume=%D/podman/radicale/data:/var/lib/radicale:z,U
+Volume=radicale-config.volume:/etc/radicale:ro
+Volume=radicale-data:/var/lib/radicale
 
 [Service]
 Restart=on-failure
