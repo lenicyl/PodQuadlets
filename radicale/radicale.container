@@ -4,7 +4,7 @@ Image=ghcr.io/kozea/radicale:stable
 PublishPort=5232:5232
 
 Volume=radicale-config.volume:/etc/radicale:ro
-Volume=radicale-data:/var/lib/radicale
+Volume=radicale-data.volume:/var/lib/radicale
 
 [Service]
 Restart=on-failure
